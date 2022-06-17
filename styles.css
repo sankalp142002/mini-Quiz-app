@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: #141E30; 
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fedcb0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.cont-1 {
+    font-family: 'Abel', sans-serif;
+
+    background: linear-gradient(145deg, #121b2b, #152033);
+    box-shadow:  13px 13px 27px #080c13, -13px -13px 27px #20304d;
+    width: 55vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cont-2 {margin-top: 1rem;
+    padding: 2rem 3rem;
+}
+
+h1{
+    margin: 8rem;
+    margin-top: -7rem;
+    font-weight: 500;
+    font-size: 3.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 1rem;
+    margin-top: -3rem;
+    font-size: 1.6rem;
+}
+
+ul {
+    list-style: none;
+    margin-top: 1.2rem;
+}
+
+li{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-size: 1.3rem;
+}
+
+label{
+    margin: .5rem;
+}
+button {
+    border: none;
+    width: 40%;
+    padding: .5rem;
+    color: #fedcb0;
+    border-radius: 1.5rem;
+    background: linear-gradient(145deg, #121b2b, #152033);
+    box-shadow:  6px 6px 12px #080c13,
+             -6px -6px 12px #20304d;
+    cursor: pointer;
+}
+

@@ -13,6 +13,7 @@ body::-webkit-scrollbar {
 
 body {
     background: #141E30; 
+    background: url('pawel-czerwinski-prMn9KINLtI-unsplash.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,11 +28,10 @@ body {
 
 .cont-1 {
     font-family: 'Abel', sans-serif;
-
+padding: 2rem;
     background: linear-gradient(145deg, #121b2b, #152033);
     box-shadow:  13px 13px 27px #080c13, -13px -13px 27px #20304d;
     width: 55vh;
-    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +39,7 @@ body {
 }
 
 .cont-2 {margin-top: 1rem;
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
 }
 
 h1{

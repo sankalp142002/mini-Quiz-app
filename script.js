@@ -1,11 +1,10 @@
-const questionData = [
-    {
+const questionData = [{
         question: 'Do you Play laser tag once a week?',
         a: 'Yes',
         b: 'NO',
         c: 'Yeno',
         d: 'I am not awsome!',
-        correct : 'a'
+        correct: 'a'
     },
     {
         question: "Don't get married before you're ______ ?",
@@ -13,7 +12,7 @@ const questionData = [
         b: '25',
         c: '30',
         d: '69',
-        correct : 'c'
+        correct: 'c'
     },
     {
         question: 'Keep your apartment chilly. Nipples reveal themselves at temperatures below ______°C.',
@@ -21,7 +20,7 @@ const questionData = [
         b: '15',
         c: '-1',
         d: '33',
-        correct : 'b'
+        correct: 'b'
     },
     {
         question: 'Do you Have a “guy” for everything?',
@@ -29,7 +28,7 @@ const questionData = [
         b: 'NO',
         c: 'Yeno',
         d: 'I am not awsome!',
-        correct : 'a'
+        correct: 'a'
     },
     {
         question: 'Never use the word “______” on a first date.',
@@ -37,7 +36,7 @@ const questionData = [
         b: 'Handcuff',
         c: 'Wet',
         d: 'moist',
-        correct : 'd'
+        correct: 'd'
     },
     {
         question: 'Will learning to play the air drums save your life one day?',
@@ -45,7 +44,7 @@ const questionData = [
         b: 'NO',
         c: 'Yeno',
         d: 'I am not awsome!',
-        correct : 'a'
+        correct: 'a'
     },
     {
         question: 'When visiting a strip club, do not sleep on the meatballs. True or False?',
@@ -53,7 +52,7 @@ const questionData = [
         b: 'True',
         c: 'Not True',
         d: 'I am not awsome!',
-        correct : 'b'
+        correct: 'b'
     },
     {
         question: 'The words said by gods ______.',
@@ -61,7 +60,7 @@ const questionData = [
         b: 'Marry a striper',
         c: 'Slender wife, happy life!!!',
         d: 'Dog is the best wingman ever!',
-        correct : 'c'
+        correct: 'c'
     },
     {
         question: 'Own at least one suit, but twelve if you can.',
@@ -69,7 +68,7 @@ const questionData = [
         b: 'A hell yesss!!!',
         c: 'A legen yessssss dary!!!',
         d: 'I am not awsome at all bro!!',
-        correct : 'c'
+        correct: 'c'
     },
 ]
 
@@ -83,20 +82,69 @@ const cEl = document.getElementById('cText');
 const dEl = document.getElementById('dText');
 const submitBtn = document.getElementById('submit')
 
+const container = document.getElementsByClassName('cont-1');
+
 const questionEl = document.getElementById("question");
 
-loadQuiz () ;
-function loadQuiz (){
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+    des();
     const cur = questionData[curQ];
-    questionEl.innerText=cur.question;
-    aEl.innerText=cur.a;
-    bEl.innerText=cur.b;
-    cEl.innerText=cur.c;
-    dEl.innerText=cur.d;
+    questionEl.innerText = cur.question;
+    aEl.innerText = cur.a;
+    bEl.innerText = cur.b;
+    cEl.innerText = cur.c;
+    dEl.innerText = cur.d;
 
 }
 
-submitBtn.addEventListener('click',() =>{
+function selected() {
+    const answ = document.querySelectorAll(".ans");
+
+    let answer = undefined;
+    answ.forEach((elb) => {
+        if (elb.checked) {
+            answer = elb.id;
+        }
+    });
+    return answer;
+}
+
+function finish() {
+
+}
+
+function des(){
+    const answ = document.querySelectorAll(".ans");
+
+    let answer = undefined;
+    answ.forEach((elb) => {
+            elb.checked=false;
+    });
+}
+
+submitBtn.addEventListener('click', () => {
+
+    const answer = selected();
+
+
+    if (curQ < questionData.length) {
+
+        if(answer){
+            if(answer === questionData[curQ].correct){
+                  score++;
+                  console.log(score)
+            }
+            curQ++;
+        }
+
+        loadQuiz();
+    } else {
+        finish();
+    }
+
     curQ++;
-    loadQuiz();
 })

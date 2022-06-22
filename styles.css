@@ -65,10 +65,12 @@ li{
     margin: 1rem 0;
     font-size: 1.1rem;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 label{
     margin: .5rem;
+    cursor: pointer;
 }
 button {
     border: none;

@@ -15,11 +15,11 @@ const questionData = [{
         correct: 'c'
     },
     {
-        question: 'Keep your apartment chilly. Nipples reveal themselves at temperatures below ______°C.',
-        a: '10',
-        b: '15',
-        c: '-1',
-        d: '33',
+        question: 'If you are older than 30 and you do get married, accept the fact that "______" will become a big part of your life!',
+        a: 'kids',
+        b: 'throw pillows',
+        c: 'Barney',
+        d: 'liberty bell',
         correct: 'b'
     },
     {
@@ -63,6 +63,14 @@ const questionData = [{
         correct: 'c'
     },
     {
+        question: 'Tip generously. We ALL have to make up _____',
+        a: 'for the waiteress',
+        b: 'for Lily',
+        c: 'for the bartender',
+        d: 'for Ted',
+        correct: 'd'
+    },
+    {
         question: 'Own at least one suit, but twelve if you can.',
         a: 'Yes',
         b: 'A hell yesss!!!',
@@ -80,9 +88,11 @@ const aEl = document.getElementById('aText');
 const bEl = document.getElementById('bText');
 const cEl = document.getElementById('cText');
 const dEl = document.getElementById('dText');
-const submitBtn = document.getElementById('submit')
+const submitBtn = document.getElementById('submit');
 
-const container = document.getElementsByClassName('cont-1');
+const container = document.getElementById('cont-1');
+const container2=document.getElementsByClassName('cont-2')
+const centb = document.getElementsByClassName('cen')
 
 const questionEl = document.getElementById("question");
 
@@ -91,7 +101,6 @@ let score = 0;
 loadQuiz();
 
 function loadQuiz() {
-    des();
     const cur = questionData[curQ];
     questionEl.innerText = cur.question;
     aEl.innerText = cur.a;
@@ -114,7 +123,14 @@ function selected() {
 }
 
 function finish() {
-
+    if (score>6){
+        container.innerHTML=`<h2 class="dekhteHai">Your Score is ${score}/${questionData.length}!!
+        YOOOUUU ARE OFFLICIALLY BARNEY AWSOME!!!😁☠️✌️</h2>`
+    }
+    else{
+        container.innerHTML=`<h2 class="dekhteHai">Your Score is ${score}/${questionData.length}!!
+        YOU ARE NOT AWSOME BRO!!😪😪</h2>`
+    }
 }
 
 function des(){
@@ -130,21 +146,23 @@ submitBtn.addEventListener('click', () => {
 
     const answer = selected();
 
+    if(answer){
+        if(answer === questionData[curQ].correct){
+            score++;
+      }curQ++;
+      des();
 
-    if (curQ < questionData.length) {
 
-        if(answer){
-            if(answer === questionData[curQ].correct){
-                  score++;
-                  console.log(score)
-            }
-            curQ++;
-        }
-
+      if (curQ < questionData.length){
         loadQuiz();
-    } else {
+      }
+      else{
         finish();
+      }
     }
 
-    curQ++;
+    else{
+        loadQuiz();
+    }
+
 })

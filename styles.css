@@ -26,7 +26,7 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
-.cont-1 {
+#cont-1 {
     font-family: 'Abel', sans-serif;
 padding: 2rem;
     background: linear-gradient(145deg, #121b2b, #152033);
@@ -84,3 +84,7 @@ button {
     cursor: pointer;
 }
 
+.dekhteHai{
+    margin: 2rem;
+    padding: 1rem;
+}
